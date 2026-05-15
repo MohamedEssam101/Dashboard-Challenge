@@ -1,10 +1,13 @@
+/* Load Tailwind utilities for the whole app. */
 @import "tailwindcss";
 
+/* Default light theme color tokens. */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+/* Expose app tokens and font variables to Tailwind. */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,6 +15,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Switch global colors when the user prefers dark mode. */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,6 +23,7 @@
   }
 }
 
+/* Base document styles shared by every route. */
 body {
   background: var(--background);
   color: var(--foreground);
