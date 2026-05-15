@@ -5,7 +5,7 @@ import { GithubRepository, GithubSearchResponse } from "@/types/github";
 const GITHUB_URL =
 	"https://api.github.com/search/repositories?q=stars:>10000&sort=updated&per_page=5";
 
-export async function getTrendingRepositories(): Promise<GithubRepository[]> {
+export async function getGethubItems(): Promise<GithubRepository[]> {
 	// GitHub returns the five repositories in one response, so this section loads as one unit.
 	const response = await slowFetch(GITHUB_URL);
 	if (!response.ok) {

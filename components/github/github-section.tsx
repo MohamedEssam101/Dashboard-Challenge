@@ -2,7 +2,7 @@
 
 // Client component that loads and renders trending GitHub repositories.
 import { useFetchData } from "@/hooks/useFetchData";
-import { getTrendingRepositories } from "@/services/github";
+import { getGethubItems } from "@/services/github";
 import { SectionError } from "../ui/section-error";
 import { SectionLoading } from "../ui/section-loading";
 import { GithubItem } from "./github-item";
@@ -10,7 +10,7 @@ import { GithubItem } from "./github-item";
 export function GithubSection() {
 	// Fetch all repositories as one section-level request.
 	const { data, isLoading, error } = useFetchData(
-		getTrendingRepositories,
+		getGethubItems,
 		"Failed to load GitHub repositories",
 	);
 
