@@ -6,7 +6,7 @@ interface GithubItemProps {
 }
 
 // Presentation card for one GitHub repository.
-export function GithubItem({ repository }: GithubItemProps) {
+export function getGithubItems({ repository }: GithubItemProps) {
 	return (
 		<article className="rounded-lg border border-zinc-200 bg-zinc-50/70 p-4 transition hover:border-zinc-300 hover:bg-white dark:border-zinc-800 dark:bg-zinc-900/40 dark:hover:border-zinc-700 dark:hover:bg-zinc-900/70">
 			<div className="flex items-start gap-3">
