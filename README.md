@@ -11,6 +11,26 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Architecture Explanation
-
-The dashboard is split into three separate sections: Weather, Tech News, and GitHub Trending, because each API can load or fail at a different time. Each section has its own service file so API details and response mapping stay outside the UI components. The components use hooks to call those services and manage loading, error, and data state without repeating the same logic in every section. This keeps the page usable while data is still loading and prevents one failed API from breaking the whole dashboard. For Tech News, each story row fetches its own details so one slow or failed story only affects that row.
+# Dashboard Architecture
+ 
+## Structure
+ 
+- The dashboard is split into three independent sections: **Weather**, **Tech News**, and **GitHub Trending**
+- Each section loads and fails independently — one broken API does not affect the others
+- The page remains usable while data is still loading
+## Service Layer
+ 
+- Each section has its own dedicated service file
+- API details and response mapping are kept outside UI components
+- This keeps the UI layer clean and focused on presentation
+## Hooks
+ 
+- Each section uses a custom hook to call its service and manage state
+- Hooks handle loading, error, and data state consistently
+- No repeated state logic across components
+## Tech News — Per-Row Fetching
+ 
+- Each story row fetches its own details independently
+- A slow or failed story only affects that individual row
+- Other stories continue to load and display normally
+ 
